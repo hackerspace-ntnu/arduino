@@ -12,8 +12,5 @@ void loop()
 {
   int input = analogRead(inputPin);
 
-  Serial.print("voltage: ");
   Serial.println(input);
-   
-  delay(500); 
 }

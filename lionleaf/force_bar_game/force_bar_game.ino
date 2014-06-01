@@ -109,7 +109,7 @@ void loop()
 {
   int force = analogRead(forcepin);
   
-  int level = map(0,1020,0,8);
+  int level = map(force, 0,1024,0,9); //1024 is never reached, so max value is 8, as intended.
   
   setLevel(level);
 }
@@ -125,7 +125,7 @@ void setLevel(int lvl){
 }
 
 void clearLEDs(){
-  for(index = 0; index >= 7; index++)
+  for(int index = 0; index <= 7; index++)
   {
     shiftWrite(index, LOW);
   }
